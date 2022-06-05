@@ -1,0 +1,17 @@
+.main-btn {
+    min-width: 200px;
+
+    background-color: getColor('accent');
+    color: getBackGroundColor('primary');
+    @include font($mixinFontWeight: 700, $mixinFontSize: 16, $mixinLineHeight: 1.88, $mixinLetterSpacing: 0.06em);
+    cursor: pointer;
+    border-radius: 4px;
+    border-style: none;
+    box-shadow: 0px 4px 4px getBlackColorWithAlpha(0.15);
+    transition: background-color 250ms $timing-function;
+
+    &:hover,
+    &:focus {
+        background-color: getColor('accent-hero');
+    }
+}

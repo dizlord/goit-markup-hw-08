@@ -1,0 +1,41 @@
+/* CSS for section works */
+
+.works-list {
+    @extend %list;
+
+    /* margins for works */
+    &__item:not(:last-child) {
+        margin-right: 30px;
+    }
+
+    &__text {
+        margin: 0;
+
+        position: absolute;
+        left: 50%;
+        bottom: 27px;
+        transform: translate(-50%);
+
+        width: 100%;
+        color: getBackGroundColor('primary');
+        @include font($mixinFontWeight: 700, $mixinFontSize: 14, $mixinLineHeight: 1.14);
+        text-align: center;
+        text-transform: uppercase;
+    }
+}
+
+.works-list__tumb {
+    position: relative;
+
+    &::before {
+        content: '';
+
+        position: absolute;
+        bottom: 0;
+
+        width: 100%;
+        height: 70px;
+
+        background: getBackGroundColor('overlay');
+    }
+}

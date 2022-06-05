@@ -1,0 +1,34 @@
+/* CSS for section clients */
+
+.clients-list {
+    @extend %list;
+
+    &__item:not(:last-child) {
+        margin-right: 30px;
+    }
+
+    &__icon {
+        fill: currentColor;
+    }
+}
+
+.clients-list__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 170px;
+    height: 92px;
+
+    border: 1px solid getColor('primary-icons');
+    border-radius: 4px;
+    color: getColor('primary-icons');
+    transition: border 250ms $timing-function, color 250ms $timing-function;
+
+    &:hover,
+    &:focus {
+        color: getColor('accent');
+        border: 1px solid getColor('accent');
+        outline: transparent;
+    }
+}

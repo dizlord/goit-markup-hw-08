@@ -1,0 +1,30 @@
+body {
+    background-color: getBackGroundColor('primary');
+    color: getColor('primary-text');
+    @include font('Roboto', normal, 400, 14, 1.71, 0.03em);
+    // @include font();
+}
+
+.section {
+    padding-top: 94px;
+    padding-bottom: 94px;
+
+    &--noPaddingTop {
+        padding-top: 0;
+    }
+
+    &--otherBackground {
+        background-color: getBackGroundColor('team');
+    }
+}
+
+/* Section title */
+.section__title {
+    margin-top: 0;
+    margin-bottom: 50px;
+
+    color: getColor('title-text');
+
+    @include font($mixinFontWeight: 700, $mixinFontSize: 36, $mixinLineHeight: 1.17);
+    text-align: center;
+}

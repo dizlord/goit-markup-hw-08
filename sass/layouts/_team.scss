@@ -1,0 +1,44 @@
+/* CSS for section team */
+
+/* Flex the team content */
+.team-list {
+    @extend %list;
+}
+
+/* Team item */
+.team-list__item {
+    background-color: getBackGroundColor('primary');
+    box-shadow: 0px 1px 3px getBlackColorWithAlpha(0.12),
+        0px 1px 1px getBlackColorWithAlpha(0.14),
+        0px 2px 1px getBlackColorWithAlpha(0.2);
+    border-radius: 0 0 4px 4px;
+
+    /* Cleat the last team card */
+    &:not(:last-child) {
+        margin-right: 30px;
+    }
+}
+
+/* Padding for team card */
+.team-list__container {
+    padding: 30px 0;
+}
+
+/* Header in team*/
+.team-list__title {
+    margin-top: 0;
+    margin-bottom: 10px;
+
+    color: getColor('title-text');
+    @include font($mixinFontWeight: 500, $mixinFontSize: 16, $mixinLineHeight: 1.19, $mixinLetterSpacing: 0.03em);
+    text-align: center;
+}
+
+/* Team paragraph */
+.team-list__text {
+    margin: 0;
+    margin-bottom: 16px;
+
+    @include font($mixinFontSize: 16, $mixinLineHeight: 1.19, $mixinLetterSpacing: 0.03em);
+    text-align: center;
+}

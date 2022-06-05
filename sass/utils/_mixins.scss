@@ -1,0 +1,8 @@
+@mixin font($mixinFontFamily: map-get($font-family, 'Roboto'), $mixinFontStyle: normal, $mixinFontWeight: map-get($font-weight, 400), $mixinFontSize: map-get($font-size, 14), $mixinLineHeight: map-get($line-height, 1.71), $mixinLetterSpacing: 0.03em) {
+    font-family: map-get($font-family, $mixinFontFamily), sans-serif;
+    font-style: $mixinFontStyle;
+    font-weight: map-get($font-weight, $mixinFontWeight);
+    font-size: map-get($font-size, $mixinFontSize);
+    line-height: map-get($line-height, $mixinLineHeight);
+    letter-spacing: $mixinLetterSpacing;
+}

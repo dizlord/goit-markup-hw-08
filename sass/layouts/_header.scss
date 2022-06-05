@@ -1,0 +1,97 @@
+.header {
+    border-bottom: 1px solid getBorderColor('header');
+}
+
+.site-nav {
+    margin-right: auto;
+}
+
+/* Container to flex header */
+.header__contaiter {
+    display: flex;
+    align-items: center;
+}
+
+.header__logo {
+    margin-right: 93px;
+}
+
+.header-list {
+    @extend %list;
+
+    &__item:not(:last-child) {
+        margin-right: 50px;
+    }
+}
+
+/* main styles for links in nav*/
+.site-nav__link {
+    display: block;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    position: relative;
+
+    color: getColor('title-text');
+    text-decoration: none;
+    @include font($mixinFontWeight: 500, $mixinLineHeight: 1.14, $mixinLetterSpacing: 0.02em);
+    transition: color 250ms $timing-function;
+
+    &:hover,
+    &:focus {
+        outline: transparent;
+        color: getColor('accent');
+    }
+
+    &:hover::after,
+    &:focus::after {
+        @extend %nav-after;
+    }
+
+    &--accent {
+        color: getColor('accent');
+
+        &::after {
+            @extend %nav-after;
+        }
+    }
+}
+
+.contacts-list {
+    @extend %list;
+
+    &__item:not(:last-child) {
+        margin-right: 50px;
+    }
+}
+
+.contacts-list__link {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+
+    color: currentColor;
+    box-shadow: none;
+    text-decoration: none;
+    @include font($mixinFontWeight: 500, $mixinLineHeight: 1.14, $mixinLetterSpacing: 0.02em);
+    transition: color 250ms $timing-function, box-shadow 250ms $timing-function;
+
+    &:hover,
+    &:focus {
+        outline: transparent;
+        color: getColor('accent');
+    }
+}
+
+.contacts-list__icon {
+    margin-right: 10px;
+
+    fill: currentColor;
+    box-shadow: none;
+    transition: box-shadow 250ms $timing-function;
+
+    .contacts-list__link:hover &,
+    .contacts-list__link:focus & {
+        box-shadow: 0px 4px 4px getBlackColorWithAlpha(0.25);
+    }
+}

@@ -1,0 +1,37 @@
+/* List of btn */
+.filter-list {
+    @extend %list;
+
+    justify-content: center;
+    margin-bottom: 50px;
+
+    /* Margin for filter's btn */
+    &__item:not(:last-child) {
+        margin-right: 8px;
+    }
+}
+
+/* Portfolio filter's btn */
+.filter-list__btn {
+    padding: 6px 22px;
+    text-align: center;
+
+    background-color: getBackGroundColor('team');
+    color: getColor('title-text');
+    @include font($mixinFontWeight: 500, $mixinFontSize: 16, $mixinLineHeight: 1.63, $mixinLetterSpacing: 0.03em);
+    cursor: pointer;
+    border-radius: 4px;
+    border-style: none;
+    box-shadow: none;
+    transition: background-color 250ms $timing-function, color 250ms $timing-function, box-shadow 250ms $timing-function;
+
+    /* styles for hover and focus for button in portfolio */
+    &:hover,
+    &:focus {
+        background-color: getColor('accent');
+        color: getBackGroundColor('primary');
+        box-shadow: 0px 3px 1px getBlackColorWithAlpha(0.1),
+            0px 1px 2px getBlackColorWithAlpha(0.08),
+            0px 2px 2px getBlackColorWithAlpha(0.12);
+    }
+}

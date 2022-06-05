@@ -1,0 +1,100 @@
+$timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+$colors: (
+    'primary-text': #757575,
+    'primary-icons': #AFB1B8,
+    'title-text': #212121,
+    'accent': #2196F3,
+    'accent-hero': #188CE8,
+    'logo': #000000,
+    'footer-link': rgba(255, 255, 255, 0.6),
+    'textarea': rgba(117, 117, 117, 0.5),
+);
+
+@function getColor($key) {
+    @return map-get($colors, $key);
+}
+
+$bg-colors: (
+    'primary': #FFFFFF,
+    'hero': #C4C4C4,
+    'team': #F5F4FA,
+    'social': rgba(255, 255, 255, 0.1),
+    'footer': #2F303A,
+    'overlay': rgba(47, 48, 58, 0.8),
+    'card-portfolio': rgba(33, 150, 243, 0.9),
+);
+
+@function getBackGroundColor($key) {
+    @return map-get($bg-colors, $key);
+}
+
+$border-colors: (
+    'header': #ECECEC,
+    'card': #EEEEEE,
+    'subscribe-form': rgba(255, 255, 255, 0.3),
+);
+
+@function getBorderColor($key) {
+    @return map-get($border-colors, $key);
+}
+
+$black-color-alpha: (
+    0.06: 0.06,
+    0.08: 0.08,
+    0.1: 0.1,
+    0.12: 0.12,
+    0.14: 0.14,
+    0.15: 0.15,
+    0.16: 0.16,
+    0.2: 0.2,
+    0.25: 0.25,
+);
+
+@function getBlackColorWithAlpha($key) {
+    @return rgba(0, 0, 0, map-get($black-color-alpha, $key));
+}
+
+$font-family: (
+    'Roboto': Roboto,
+    'Raleway': Raleway,
+);
+
+$font-weight: (
+    400: 400,
+    500: 500,
+    700: 700,
+    900: 900,
+);
+
+$font-size: (
+    12: 12px,
+    14: 14px,
+    16: 16px,
+    18: 18px,
+    20: 20px,
+    26: 26px,
+    36: 36px,
+    44: 44px,
+);
+
+$line-height: (
+    1.14: 1.14,
+    1.15: 1.15,
+    1.17: 1.17,
+    1.19: 1.19,
+    1.25: 1.25,
+    1.36: 1.36,
+    1.56: 1.56,
+    1.63: 1.63,
+    1.71: 1.71,
+    1.88: 1.88,
+    2.00: 2,
+);
+
+$letter-spacing: (
+    0.01: 0.01,
+    0.02: 0.02,
+    0.03: 0.03,
+    0.06: 0.06,
+);

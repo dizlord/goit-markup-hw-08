@@ -1,0 +1,14 @@
+.logo {
+    color: getColor('accent');
+    text-decoration: none;
+
+    @include font($mixinFontFamily: 'Raleway', $mixinFontWeight: 700, $mixinFontSize: 26, $mixinLineHeight: 1.19);
+}
+
+.logo__text {
+    color: getColor('logo');
+}
+
+.logo__text--reverse {
+    color: getBackGroundColor('primary');
+}
