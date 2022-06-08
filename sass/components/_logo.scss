@@ -1,12 +1,15 @@
 .logo {
     display: inline-block;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    // padding-top: 15px;
+    // padding-bottom: 15px;
     
     color: getColor('accent');
     text-decoration: none;
 
-    @include font($mixinFontFamily: 'Raleway', $mixinFontWeight: 700, $mixinFontSize: 26, $mixinLineHeight: 1.19);
+    @include font($mixinFontFamily: 'Raleway', $mixinFontWeight: 700, $mixinFontSize: 24, $mixinLineHeight: 1.17);
+    // @include font($mixinFontFamily: 'Raleway', $mixinFontWeight: 700, $mixinFontSize: 26, $mixinLineHeight: 1.19);
 }
 
 .logo__text {

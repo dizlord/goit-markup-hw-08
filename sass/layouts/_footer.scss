@@ -1,130 +1,139 @@
-// /* CSS for section footer */
-// .footer {
-//     padding: 60px 0;
+/* CSS for section footer */
+.footer {
+    padding: 60px 0;
 
-//     background-color: getBackGroundColor('footer');
-// }
+    background-color: getBackGroundColor('footer');
+}
 
-// .footer-container {
-//     display: flex;
-//     align-items: baseline;
-// }
+.footer-container {
+    text-align: center;
+    // display: flex;
+    // align-items: baseline;
+}
 
-// .adress-container {
-//     margin-right: 70px;
-// }
+.adress-container {
+    margin-bottom: 60px;
+    // margin-right: 70px;
+}
 
-// .footer__logo {
-//     display: inline-block;
-//     margin-bottom: 20px;
-// }
+.footer__logo {
+    display: inline-block;
+    margin-bottom: 20px;
+}
 
-// .footer-list {
-//     @extend %list;
+// Adress is here
+.footer-list {
+    @extend %list;
 
-//     flex-direction: column;
-// }
+    // flex-direction: column;
+}
 
-// /* margin for footer */
-// .footer-list__item {
-//     width: 231px;
-//     margin-bottom: 9px;
+/* margin for footer */
+.footer-list__item {
+    margin-bottom: 8px;
+    // width: 231px;
+    // margin-bottom: 9px;
 
-//     /* clear the last position in footer */
-//     &:last-child {
-//         margin-bottom: 0;
-//     }
-// }
+    /* clear the last position in footer */
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
 
-// /* style for footer adress */
-// .footer-list__adress {
-//     color: getBackGroundColor('primary');
-//     @include font($mixinFontWeight: 400, $mixinFontSize: 14, $mixinLineHeight: 1.71, $mixinLetterSpacing: 0.03em);
-//     text-decoration: none;
-//     transition: color 250ms $timing-function;
+/* style for footer adress */
+.footer-list__adress {
+    color: getBackGroundColor('primary');
+    @include font($mixinFontWeight: 400, $mixinFontSize: 14, $mixinLineHeight: 1.71, $mixinLetterSpacing: 0.03em);
+    text-decoration: none;
+    transition: color 250ms $timing-function;
 
-//     &:hover,
-//     &:focus {
-//         outline: transparent;
-//         color: getColor('accent');
-//     }    
-// }
+    &:hover,
+    &:focus {
+        outline: transparent;
+        color: getColor('accent');
+    }    
+}
 
-// /* styles for links in footer */
-// .footer-list__link {
-//     color: getColor('footer-link');
-//     @include font($mixinFontWeight: 400, $mixinFontSize: 14, $mixinLineHeight: 1.71, $mixinLetterSpacing: 0.03em);
-//     text-decoration: none;
-//     transition: color 250ms $timing-function;
+/* styles for links in footer */
+.footer-list__link {
+    color: getColor('footer-link');
+    @include font($mixinFontWeight: 400, $mixinFontSize: 14, $mixinLineHeight: 1.71, $mixinLetterSpacing: 0.03em);
+    text-decoration: none;
+    transition: color 250ms $timing-function;
 
-//     &:hover,
-//     &:focus {
-//         outline: transparent;
-//         color: getColor('accent');
-//     }
-// }
+    &:hover,
+    &:focus {
+        outline: transparent;
+        color: getColor('accent');
+    }
+}
 
-// .connect-container {
-//     margin-right: 93px;
-// }
+.connect-container {
+    margin-bottom: 60px;
+    // margin-right: 93px;
+}
 
-// .footer-container__title {
-//     display: block;
-//     margin-top: 0;
-//     margin-bottom: 20px;
+.footer-container__title {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 20px;
 
-//     @include font($mixinFontSize: 14, $mixinFontWeight: 700, $mixinLineHeight: 1.14);
-//     text-transform: uppercase;
+    @include font($mixinFontSize: 14, $mixinFontWeight: 700, $mixinLineHeight: 1.14);
+    text-transform: uppercase;
 
-//     color: getBackGroundColor('primary');
-// }
+    color: getBackGroundColor('primary');
+}
 
-// .subscribe-form {
-//     display: flex;
-//     align-items: flex-end;
-//     flex-grow: 1;
+.subscribe-form {
+    text-align: center;
+    // display: flex;
+    // align-items: flex-end;
+    // flex-grow: 1;
 
-//     &__label {
-//         flex-grow: 2;
-//         margin-right: 12px;
-//         cursor: pointer;
-//     }
+    &__label {
+        // flex-grow: 2;
+        // margin-right: 12px;
+        cursor: pointer;
+    }
 
-//     &__input {
-//         padding: 15px 15px 15px 16px;
-//         width: 100%;
-//         height: 50px;
+    &__input {
+        margin-bottom: 20px;
+        padding: 15px 15px 15px 16px;
+        width: 100%;
+        height: 50px;
 
-//         color: getColor('footer-link');
-//         @include font($mixinFontSize: 16, $mixinLineHeight: 1.25, $mixinLetterSpacing: 0.03em);
-//         background-color: getBackGroundColor('footer');
-//         border: 1px solid getBorderColor('subscribe-form');
-//         border-radius: 4px;
-//         outline: transparent;
-//         cursor: pointer;
-//     }
-// }
+        color: getColor('footer-link');
+        @include font($mixinFontSize: 16, $mixinLineHeight: 1.25, $mixinLetterSpacing: 0.03em);
+        background-color: getBackGroundColor('footer');
+        border: 1px solid getBorderColor('subscribe-form');
+        border-radius: 4px;
+        outline: transparent;
+        cursor: pointer;
+    }
+}
 
-// .subscribe-btn {
-//     width: 200px;
-//     height: 50px;
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     padding: 10px 28px 10px 29px;
-//     color: getBackGroundColor('primary');
-//     background-color: getColor('accent');
-//     box-shadow: 0px 4px 4px getBlackColorWithAlpha(0.15);
-//     border: none;
-//     border-radius: 4px;
-//     cursor: pointer;
+.subscribe-btn {
+    width: 200px;
+    height: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 28px 10px 29px;
+    color: getBackGroundColor('primary');
+    background-color: getColor('accent');
+    box-shadow: 0px 4px 4px getBlackColorWithAlpha(0.15);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 
-//     &__text {
-//         color: getBackGroundColor('primary');
-//         @include font($mixinFontWeight: 700, $mixinFontSize: 16, $mixinLineHeight: 1.88, $mixinLetterSpacing: 0.06em);
-//     }
+    &__text {
+        color: getBackGroundColor('primary');
+        @include font($mixinFontWeight: 700, $mixinFontSize: 16, $mixinLineHeight: 1.88, $mixinLetterSpacing: 0.06em);
+    }
 
-//     &__icon {
-//         fill: currentColor;
-//     }
-// }
+    &__icon {
+        fill: currentColor;
+    }
+}
