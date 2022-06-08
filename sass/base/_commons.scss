@@ -2,15 +2,23 @@ body {
     background-color: getBackGroundColor('primary');
     color: getColor('primary-text');
     @include font('Roboto', normal, 400, 14, 1.71, 0.03em);
-    // @include font();
 }
 
 .section {
-    padding-top: 94px;
-    padding-bottom: 94px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    @include mq(desktop) {
+        padding-top: 94px;
+        padding-bottom: 94px;
+    }
 
     &--noPaddingTop {
         padding-top: 0;
+
+        @include mq(notDesktop) {
+            display: none;
+        }
     }
 
     &--otherBackground {
@@ -21,10 +29,14 @@ body {
 /* Section title */
 .section__title {
     margin-top: 0;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 
     color: getColor('title-text');
-
-    @include font($mixinFontWeight: 700, $mixinFontSize: 36, $mixinLineHeight: 1.17);
+    @include font($mixinFontWeight: 700, $mixinFontSize: 28, $mixinLineHeight: 1.17);
     text-align: center;
+
+    @include mq(desktop) {
+        @include font($mixinFontWeight: 700, $mixinFontSize: 36, $mixinLineHeight: 1.17);
+        margin-bottom: 50px;
+    }
 }

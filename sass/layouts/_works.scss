@@ -2,6 +2,7 @@
 
 .works-list {
     @extend %list;
+    display: flex;
 
     /* margins for works */
     &__item:not(:last-child) {

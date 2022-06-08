@@ -2,21 +2,47 @@
 .features-list {
     @extend %list;
 
-    /* Put features in a net */
-    &__item {
-        flex-basis: calc((100% - 90px) / 4);
-        margin-right: 30px;
+    @include mq(notDesktop) {
+        &__item:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    }
+    @include mq(tablet) {
+        display: flex;
+        flex-wrap: wrap;
+        &__item {
+            margin-right: 30px;
+        }
+    }
+    @include mq(tablet-only) {
+        &__item {
+            flex-basis: calc((100% - 30px) / 2);
+        }
 
-        /* Clear the last fetures */
-        &:last-child {
+        &__item:nth-child(2n) {
             margin-right: 0;
         }
+
+        &__item:nth-last-child(-n + 2) {
+            margin-bottom: 0;
+        }
+    }
+    @include mq(desktop) {
+        &__item {
+            margin-bottom: 0;
+            flex-basis: calc((100% - 90px) / 4);
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
     }
 }
 
 .features-list__title {
     margin-top: 0;
     margin-bottom: 10px;
+    text-align: center;
 
     color: getColor('title-text');
     @include font($mixinFontWeight: 700, $mixinFontSize: 14, $mixinLineHeight: 1.14);

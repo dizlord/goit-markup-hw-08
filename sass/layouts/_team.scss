@@ -3,25 +3,62 @@
 /* Flex the team content */
 .team-list {
     @extend %list;
-}
 
-/* Team item */
-.team-list__item {
-    background-color: getBackGroundColor('primary');
-    box-shadow: 0px 1px 3px getBlackColorWithAlpha(0.12),
-        0px 1px 1px getBlackColorWithAlpha(0.14),
-        0px 2px 1px getBlackColorWithAlpha(0.2);
-    border-radius: 0 0 4px 4px;
+    text-align: center;
 
-    /* Cleat the last team card */
-    &:not(:last-child) {
-        margin-right: 30px;
+    &__item {
+        background-color: getBackGroundColor('primary');
+        box-shadow: 0px 1px 3px getBlackColorWithAlpha(0.12),
+            0px 1px 1px getBlackColorWithAlpha(0.14),
+            0px 2px 1px getBlackColorWithAlpha(0.2);
+        border-radius: 0 0 4px 4px;
+    }
+
+    @include mq(notDesktop) {
+        &__item:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    }
+    @include mq(tablet) {
+        display: flex;
+        flex-wrap: wrap;
+        &__item {
+            margin-right: 30px;
+        }
+    }
+    @include mq(tablet-only) {
+        &__item {
+            flex-basis: calc((100% - 30px) / 2);
+        }
+
+        &__item:nth-child(2n) {
+            margin-right: 0;
+        }
+
+        &__item:nth-last-child(-n + 2) {
+            margin-bottom: 0;
+        }
+    }
+    @include mq(desktop) {
+        &__item {
+            margin-bottom: 0;
+            flex-basis: calc((100% - 90px) / 4);
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
     }
 }
 
 /* Padding for team card */
 .team-list__container {
-    padding: 30px 0;
+    padding-top: 30px;
+    padding-bottom: 24px;
+
+    @include mq(desktop) {
+        padding-bottom: 30px;
+    }
 }
 
 /* Header in team*/

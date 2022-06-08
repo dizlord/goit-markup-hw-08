@@ -1,6 +1,7 @@
 .social-list {
     @extend %list;
 
+    display: flex;
     justify-content: center;
 
     &__item:not(:last-child) {

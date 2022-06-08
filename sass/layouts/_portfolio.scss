@@ -1,108 +1,108 @@
-/* Portfolio */
+// /* Portfolio */
 
-/* put card in net */
-.cards-list {
-    @extend %list;
+// /* put card in net */
+// .cards-list {
+//     @extend %list;
 
-    flex-wrap: wrap;
-}
+//     flex-wrap: wrap;
+// }
 
-/* Item in portfolio cards */
-.cards-list__item {
-    flex-basis: calc((100% - 60px) / 3);
-    margin-right: 30px;
-    margin-bottom: 30px;
+// /* Item in portfolio cards */
+// .cards-list__item {
+//     flex-basis: calc((100% - 60px) / 3);
+//     margin-right: 30px;
+//     margin-bottom: 30px;
 
-    /* Clear the last in row */
-    &:nth-child(3n) {
-        margin-right: 0;
-    }
+//     /* Clear the last in row */
+//     &:nth-child(3n) {
+//         margin-right: 0;
+//     }
 
-    /* Clear for last 3 cards */
-    &:nth-last-child(-n + 3) {
-        margin-bottom: 0;
-    }
-}
+//     /* Clear for last 3 cards */
+//     &:nth-last-child(-n + 3) {
+//         margin-bottom: 0;
+//     }
+// }
 
-/* link for card */
-.cards-list__link {
-    display: block;
-    text-decoration: none;
-    box-shadow: none;
-    transition: box-shadow 250ms $timing-function;
+// /* link for card */
+// .cards-list__link {
+//     display: block;
+//     text-decoration: none;
+//     box-shadow: none;
+//     transition: box-shadow 250ms $timing-function;
 
-    &:hover,
-    &:focus {
-        box-shadow: 0px 1px 1px getBlackColorWithAlpha(0.12),
-            0px 4px 4px getBlackColorWithAlpha(0.06),
-            1px 4px 6px getBlackColorWithAlpha(0.16);
-    }
-}
+//     &:hover,
+//     &:focus {
+//         box-shadow: 0px 1px 1px getBlackColorWithAlpha(0.12),
+//             0px 4px 4px getBlackColorWithAlpha(0.06),
+//             1px 4px 6px getBlackColorWithAlpha(0.16);
+//     }
+// }
 
-.cards-list__tumb {
-    position: relative;
-    overflow: hidden;
-}
+// .cards-list__tumb {
+//     position: relative;
+//     overflow: hidden;
+// }
 
-.cards-list__overlay {
-    position: absolute;
-    left: 0;
-    top: 0;
-    padding: 63px 24px;
+// .cards-list__overlay {
+//     position: absolute;
+//     left: 0;
+//     top: 0;
+//     padding: 63px 24px;
 
-    width: 100%;
-    height: 100%;
+//     width: 100%;
+//     height: 100%;
 
-    background: getBackGroundColor('card-portfolio');
-    transform: translateY(100%);
-    transition: transform 250ms $timing-function;
+//     background: getBackGroundColor('card-portfolio');
+//     transform: translateY(100%);
+//     transition: transform 250ms $timing-function;
 
-    .cards-list__link:hover &,
-    .cards-list__link:focus & {
-        transform: translateY(0);
-    }
-}
+//     .cards-list__link:hover &,
+//     .cards-list__link:focus & {
+//         transform: translateY(0);
+//     }
+// }
 
-/* style for p in portfolio */
-.cards-list__text {
-    margin: 0;
+// /* style for p in portfolio */
+// .cards-list__text {
+//     margin: 0;
 
-    color: getColor('primary-text');
-    @include font($mixinFontWeight: 400, $mixinFontSize: 16, $mixinLineHeight: 1.88, $mixinLetterSpacing: 0.03em);
-}
+//     color: getColor('primary-text');
+//     @include font($mixinFontWeight: 400, $mixinFontSize: 16, $mixinLineHeight: 1.88, $mixinLetterSpacing: 0.03em);
+// }
 
-/* borders and style for cards */
-.cards-list__container {
-    padding: 20px 24px;
+// /* borders and style for cards */
+// .cards-list__container {
+//     padding: 20px 24px;
 
-    @each $side in right,
-    bottom,
-    left {
-        border-#{$side}: 1px solid getBorderColor('card');
-    }
-}
+//     @each $side in right,
+//     bottom,
+//     left {
+//         border-#{$side}: 1px solid getBorderColor('card');
+//     }
+// }
 
-/* style for title of portfolio */
-.cards-list__title {
-    margin-top: 0;
-    margin-bottom: 4px;
+// /* style for title of portfolio */
+// .cards-list__title {
+//     margin-top: 0;
+//     margin-bottom: 4px;
 
-    color: getColor('title-text');
-    @include font($mixinFontWeight: 700, $mixinFontSize: 18, $mixinLineHeight: 2, $mixinLetterSpacing: 0.06em);
-}
+//     color: getColor('title-text');
+//     @include font($mixinFontWeight: 700, $mixinFontSize: 18, $mixinLineHeight: 2, $mixinLetterSpacing: 0.06em);
+// }
 
-.cards-list__paragraph {
-    margin: 0;
-    padding: 0;
+// .cards-list__paragraph {
+//     margin: 0;
+//     padding: 0;
 
-    color: getBackGroundColor('primary');
-    @include font($mixinFontWeight: 400, $mixinFontSize: 18, $mixinLineHeight: 1.56, $mixinLetterSpacing: 0.03em);
+//     color: getBackGroundColor('primary');
+//     @include font($mixinFontWeight: 400, $mixinFontSize: 18, $mixinLineHeight: 1.56, $mixinLetterSpacing: 0.03em);
 
-    opacity: 0;
-    transition: opacity 250ms $timing-function, transform 250ms $timing-function;
+//     opacity: 0;
+//     transition: opacity 250ms $timing-function, transform 250ms $timing-function;
 
-    .cards-list__link:hover &,
-    .cards-list__link:focus & {
-        opacity: 1;
-    }
-}
+//     .cards-list__link:hover &,
+//     .cards-list__link:focus & {
+//         opacity: 1;
+//     }
+// }
