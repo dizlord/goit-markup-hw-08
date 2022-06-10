@@ -6,37 +6,60 @@
 }
 
 .footer-container {
-    text-align: center;
-    // display: flex;
-    // align-items: baseline;
+    @include mq(notDesktop) {
+        text-align: center;
+    } 
+    @include mq(tablet) {
+        padding-right: 89px;
+        padding-left: 76px;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+    }
+    @include mq(desktop) {
+        padding-right: 15px;
+        padding-left: 15px;
+        flex-wrap: nowrap;
+    }
 }
 
 .adress-container {
     margin-bottom: 60px;
-    // margin-right: 70px;
+    @include mq(desktop) {
+        margin-right: 70px;
+        margin-bottom: 0;
+    }
 }
 
 .footer__logo {
     display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
     margin-bottom: 20px;
+
+    @include mq(desktop) {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
 // Adress is here
 .footer-list {
     @extend %list;
-
-    // flex-direction: column;
 }
 
 /* margin for footer */
 .footer-list__item {
     margin-bottom: 8px;
-    // width: 231px;
-    // margin-bottom: 9px;
 
     /* clear the last position in footer */
     &:last-child {
         margin-bottom: 0;
+    }
+    @include mq(desktop) {
+        width: 231px;
+        margin-bottom: 9px;
     }
 }
 
@@ -70,7 +93,12 @@
 
 .connect-container {
     margin-bottom: 60px;
-    // margin-right: 93px;
+    @include mq(tablet) {
+        margin-bottom: 0;
+    }
+    @include mq(desktop) {
+        margin-right: 93px;
+    }
 }
 
 .footer-container__title {
@@ -85,21 +113,36 @@
 }
 
 .subscribe-form {
-    text-align: center;
-    // display: flex;
-    // align-items: flex-end;
-    // flex-grow: 1;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+
+    @include mq(notDesktop) {
+        text-align: center;
+    }
+
+    @include mq(desktop) {
+        display: flex;
+        align-items: flex-end;
+        flex-grow: 1;
+    }
 
     &__label {
-        // flex-grow: 2;
-        // margin-right: 12px;
+        display: block;
+        margin-bottom: 20px;
         cursor: pointer;
+
+        @include mq(desktop) {
+            flex-grow: 2;
+            margin-right: 12px;
+            margin-bottom: 0;
+        }
     }
 
     &__input {
-        margin-bottom: 20px;
         padding: 15px 15px 15px 16px;
         width: 100%;
+        max-width: 450px;
         height: 50px;
 
         color: getColor('footer-link');
@@ -113,7 +156,6 @@
 }
 
 .subscribe-btn {
-    width: 200px;
     height: 50px;
     margin-right: auto;
     margin-left: auto;
@@ -129,6 +171,7 @@
     cursor: pointer;
 
     &__text {
+        margin-right: 10px;
         color: getBackGroundColor('primary');
         @include font($mixinFontWeight: 700, $mixinFontSize: 16, $mixinLineHeight: 1.88, $mixinLetterSpacing: 0.06em);
     }

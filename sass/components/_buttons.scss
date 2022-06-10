@@ -1,6 +1,4 @@
 .main-btn {
-    min-width: 200px;
-
     background-color: getColor('accent');
     color: getBackGroundColor('primary');
     @include font($mixinFontWeight: 700, $mixinFontSize: 16, $mixinLineHeight: 1.88, $mixinLetterSpacing: 0.06em);

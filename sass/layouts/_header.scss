@@ -1,5 +1,4 @@
 .header {
-    position: relative;
     border-bottom: 1px solid getBorderColor('header');
 }
 
@@ -13,6 +12,7 @@
 
     background-color: transparent;
     border: none;
+    transition: color 250ms $timing-function;
 
     &__close {
         display: none;
@@ -25,55 +25,86 @@
     &.is-open &__open {
         display: none;
     }
+
+    &__icon {
+        fill: currentColor;
+    }
+
+    &:hover,
+    &_:focus {
+        color: getColor('accent');
+    }
+
     z-index: 1;
+
+    @include mq(tablet) {
+        display: none;
+    }
 }
 
 .menu-container {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding-top: 48px;
-    padding-right: 83px;
-    padding-left: 40px;
+    padding: 48px 40px;
     
     background-color: getBackGroundColor('primary');
 
-    &.is-open {
-        display: block;
+    @include mq(mobile-only) {
+        // display: none;
+        transform: translateX(-100%);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        transition: transform 250ms $timing-function;
+
+        &.is-open {
+            display: flex;
+            flex-direction: column;
+            transform: translateX(0);
+        }
     }
+    @include mq(tablet) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-grow: 1;
+        padding: 0;
+    }
+    overflow-y: scroll;
 }
 
 // .site-nav {
 //     // margin-right: auto;
 // }
 
-// /* Container to flex header */
-// .header__contaiter {
-//     display: flex;
-//     align-items: center;
-// }
+/* Container to flex header */
+.header__contaiter {
+    // position: relative;
+    @include mq(tablet) {
+        display: flex;
+        align-items: center;
+    }
+}
 
-// .header__logo {
-//     margin-right: 93px;
-// }
-
-// .menu-container {
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     flex-grow: 1;
-// }
+.header__logo {
+    @include mq(tablet) {
+        margin-right: 88px;
+    }
+    @include mq(desktop) {
+        margin-right: 93px;
+    }
+}
 
 .header-list {
     @extend %list;
     
+
     &__item:not(:last-child) {
         margin-bottom: 32px;
     }
 
     @include mq(tablet) {
+        display: flex;
         &__item:not(:last-child) {
             margin-bottom: 0;
             margin-right: 50px;
@@ -146,25 +177,55 @@
 
 .contacts-list {
     @extend %list;
-
-    // &__item:not(:last-child) {
-    //     margin-right: 50px;
-    // }
+    
     @include mq(mobile-only) {
+        margin-top: auto;
         display: flex;
         flex-direction: column-reverse;
+        &__item:not(:first-child) {
+            margin-bottom: 32px;
+        }
+        &__item:first-child {
+            margin-bottom: 64px;
+        }
+    }
+    @include mq(tablet-only) {
+        &__item:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+    @include mq(desktop) {
+        display: flex;
+        align-items: center;
+
+        &__item:not(:last-child) {
+            margin-right: 50px;
+        }
     }
 }
 
 .contacts-list__link {
-    // display: flex;
-    // align-items: center;
     margin: 0;
     padding: 0;
 
     color: currentColor;
     text-decoration: none;
-    @include font($mixinFontWeight: 500, $mixinLineHeight: 1.14, $mixinLetterSpacing: 0.02em);
+    @include mq(mobile-only) {
+        @include font($mixinFontWeight: 500, $mixinFontSize: 24, $mixinLineHeight: 1.17, $mixinLetterSpacing: 0.02em);
+        
+        &--big {
+            color: getColor('accent');
+            @include font($mixinFontWeight: 500, $mixinFontSize: 34, $mixinLineHeight: 1.17, $mixinLetterSpacing: 0.02em);
+        }
+    }
+    @include mq(tablet) {
+        display: flex;
+        align-items: center;
+        @include font($mixinFontWeight: 500, $mixinFontSize: 12, $mixinLineHeight: 1.17, $mixinLetterSpacing: 0.02em);
+    }
+    @include mq(desktop) {
+        @include font($mixinFontWeight: 500, $mixinFontSize: 14, $mixinLineHeight: 1.14, $mixinLetterSpacing: 0.02em);
+    }
     transition: color 250ms $timing-function, box-shadow 250ms $timing-function;
 
     &:hover,
@@ -176,6 +237,24 @@
 
 .contacts-list__icon {
     margin-right: 10px;
+    display: none;
+
+    fill: currentColor;
+    box-shadow: none;
+    transition: box-shadow 250ms $timing-function;
+
+    .contacts-list__link:hover &,
+    .contacts-list__link:focus & {
+        box-shadow: 0px 4px 4px getBlackColorWithAlpha(0.25);
+    }
+    @include mq(desktop) {
+        display: block;
+    }
+}
+
+.contacts-list__icon-small {
+    display: none;
+    margin-right: 8px;
 
     fill: currentColor;
     box-shadow: none;
@@ -186,7 +265,53 @@
         box-shadow: 0px 4px 4px getBlackColorWithAlpha(0.25);
     }
 
-    @include mq(mobile-only) {
-        display: none;
+    @include mq(tablet-only) {
+        display: block;
     }
 }
+
+.mobile-social {
+    @extend %list;
+
+    display: flex;
+    align-items: center;
+
+    // &__item:not(:last-child) {
+    //     border-right: 1px solid getBackGroundColor('social-line');
+    //     padding-left: 10px;
+    //     padding-right: 10px;
+    // }
+
+    // &__item:first-child {
+    //     padding-left: 0;
+    // }
+
+    // &__item:last-child {
+    //     padding-left: 10px;
+    // }
+
+    &__link {
+        margin: 0;
+        padding: 0;
+        
+        color: getColor('accent');
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+    }
+
+    @include mq(tablet){
+        display: none;
+    }
+    &__item:not(:last-child) &__link::after {
+        content: '';
+        margin-right: 10px;
+        margin-left: 10px;
+        width: 22px;
+        height: 1px;
+        transform: rotate(90deg);
+        background-color: getBackGroundColor('social-line');
+    }
+}
+
+

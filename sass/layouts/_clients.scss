@@ -17,7 +17,7 @@
             margin-right: 30px;
         }
     }
-    @include mq(mobile-only) {
+    @include mq(mobile-tablet) {
         &__item {
             flex-basis: calc((100% - 30px) / 2);
         }
@@ -44,12 +44,11 @@
             margin-bottom: 0;
         }
     }
-    @include mq(desktop) {
-        margin-bottom: 0;
-        &__item:not(:last-child) {
-            margin-right: 30px;
-        }
-    }
+    // @include mq(desktop) {
+    //     &__item:not(:last-child) {
+    //         margin-right: 30px;
+    //     }
+    // }
 
     &__icon {
         fill: currentColor;

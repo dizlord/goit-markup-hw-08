@@ -1,32 +1,46 @@
 // /* CSS for section hero */
-// .hero {
-//     background-color: getBackGroundColor('hero');
-//     text-align: center;
-//     background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/index/hero-background.jpg");
-//     background-repeat: no-repeat;
-//     background-position: center;
-//     background-size: contain;
+.hero {
+    padding-top: 118px;
+    padding-bottom: 118px;
+    margin-left: auto;
+    margin-right: auto;
 
-//     &__container {
-//         padding-top: 200px;
-//         padding-bottom: 200px;
-//     }
+    background-color: getBackGroundColor('hero');
+    text-align: center;
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/index/hero-background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 
-//     &__title {
-//         margin-top: 0;
-//         margin-bottom: 30px;
-//         margin-left: auto;
-//         margin-right: auto;
+
+    &__container {
+        @include mq(desktop) {
+            padding-top: 200px;
+            padding-bottom: 200px;
+        }
+    }
+
+    &__title {
+        margin-top: 0;
+        margin-bottom: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 360px;
+
+        @include mq(desktop) {
+            max-width: 696px;
+        }
     
-//         max-width: 696px;
-    
-//         color: getBackGroundColor('primary');
-//         @include font($mixinFontWeight: 900, $mixinFontSize: 44, $mixinLineHeight: 1.36, $mixinLetterSpacing: 0.06em);
-//         text-transform: uppercase;
-//         text-align: center;
-//     }
+        color: getBackGroundColor('primary');
+        @include font($mixinFontWeight: 900, $mixinFontSize: 26, $mixinLineHeight: 1.62, $mixinLetterSpacing: 0.06em);
+        @include mq(desktop) {
+            @include font($mixinFontWeight: 900, $mixinFontSize: 44, $mixinLineHeight: 1.36, $mixinLetterSpacing: 0.06em);
+        }
+        text-transform: uppercase;
+        text-align: center;
+    }
 
-//     &__btn {
-//         padding: 10px 32px;
-//     }
-// }
+    &__btn {
+        padding: 10px 32px;
+    }
+}

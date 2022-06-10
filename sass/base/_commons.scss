@@ -4,6 +4,10 @@ body {
     @include font('Roboto', normal, 400, 14, 1.71, 0.03em);
 }
 
+body.modal-open {
+    overflow: hidden;
+}
+
 .section {
     padding-top: 60px;
     padding-bottom: 60px;

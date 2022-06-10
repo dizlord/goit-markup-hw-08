@@ -15,13 +15,13 @@
   </head>
   <body>
     <!-- Header -->
-    <!-- <header class="header">
+    <header class="header">
       <div class="container header__contaiter">
         <a class="logo header__logo" href="./index.html" rel=""
           >Web<span class="logo__text">Studio</span></a
         >
         <button class="header-btn" type="button" aria-expanded="false" aria-controls="menu-container" data-menu-button>
-          <svg width="40" height="40" aria-label="Переключатель мобильного меню">
+          <svg class="header-btn__icon" width="40" height="40" aria-label="Переключатель мобильного меню">
             <use class="header-btn__open" href="./images/icons.svg#icon-menu_lines"></use>
             <use class="header-btn__close" href="./images/icons.svg#icon-close-cross"></use>
           </svg>
@@ -48,28 +48,52 @@
               <a class="contacts-list__link" href="mailto:info@devstudio.com" rel="">
                 <svg class="contacts-list__icon" width="16" height="12">
                   <use href="./images/sprite.svg#icon-envelope"></use></svg
-                >info@devstudio.com</a
-              >
+                >
+                <svg class="contacts-list__icon-small" width="14" height="10">
+                  <use href="./images/icons.svg#icon-envelope"></use></svg>info@devstudio.com</a>
             </li>
             <li class="contacts-list__item">
-              <a class="contacts-list__link" href="tel:+380961111111" rel="">
+              <a class="contacts-list__link contacts-list__link--big" href="tel:+380961111111" rel="">
                 <svg class="contacts-list__icon" width="10" height="16">
-                  <use href="./images/sprite.svg#icon-smartphone"></use></svg
-                >+38 096 111 11 11</a
+                  <use href="./images/sprite.svg#icon-smartphone"></use></svg>
+                <svg class="contacts-list__icon-small" width="10" height="14">
+                  <use href="./images/icons.svg#icon-smartphone"></use></svg>+38 096 111 11 11</a
               >
+            </li>
+          </ul>
+          <ul class="mobile-social">
+            <li class="mobile-social__item">
+              <a class="mobile-social__link" href="" aria-label="Инстаграмм">
+                Instagram
+              </a>
+            </li>
+            <li class="mobile-social__item">
+              <a class="mobile-social__link" href="" aria-label="Твиттер">
+                Twitter
+              </a>
+            </li>
+            <li class="mobile-social__item">
+              <a class="mobile-social__link" href="" aria-label="Фейсбук">
+                Facebook
+              </a>
+            </li>
+            <li class="mobile-social__item">
+              <a class="mobile-social__link" href="" aria-label="Линкедин">
+                LinkedIn
+              </a>
             </li>
           </ul>
         </div>
       </div>
-    </header> -->
+    </header>
     <main>
       <!-- Hero -->
-      <!-- <section class="hero">
+      <section class="hero">
         <div class="container hero__container">
           <h1 class="hero__title">Эффективные решения для вашего бизнеса</h1>
           <button class="main-btn hero__btn" type="button" data-modal-open>Заказать услугу</button>
         </div>
-      </section> -->
+      </section>
       <!-- Features -->
       <section class="section">
         <div class="container">
@@ -283,21 +307,21 @@
                       </svg>
                     </a>
                   </li>
-                  <li class="social-item">
+                  <li class="social-list__item">
                     <a class="social-list__link" href="" aria-label="Твиттер">
                       <svg class="social-list__icon" width="20" height="20">
                         <use href="./images/sprite.svg#icon-twitter-1"></use>
                       </svg>
                     </a>
                   </li>
-                  <li class="social-item">
+                  <li class="social-list__item">
                     <a class="social-list__link" href="" aria-label="Фейсбук">
                       <svg class="social-list__icon" width="20" height="20">
                         <use href="./images/sprite.svg#icon-facebook-1"></use>
                       </svg>
                     </a>
                   </li>
-                  <li class="social-item">
+                  <li class="social-list__item">
                     <a class="social-list__link" href="" aria-label="Линкедин">
                       <svg class="social-list__icon" width="20" height="20">
                         <use href="./images/sprite.svg#icon-linkedin-1"></use>
@@ -326,21 +350,21 @@
                       </svg>
                     </a>
                   </li>
-                  <li class="social-item">
+                  <li class="social-list__item">
                     <a class="social-list__link" href="" aria-label="Твиттер">
                       <svg class="social-list__icon" width="20" height="20">
                         <use href="./images/sprite.svg#icon-twitter-1"></use>
                       </svg>
                     </a>
                   </li>
-                  <li class="social-item">
+                  <li class="social-list__item">
                     <a class="social-list__link" href="" aria-label="Фейсбук">
                       <svg class="social-list__icon" width="20" height="20">
                         <use href="./images/sprite.svg#icon-facebook-1"></use>
                       </svg>
                     </a>
                   </li>
-                  <li class="social-item">
+                  <li class="social-list__item">
                     <a class="social-list__link" href="" aria-label="Линкедин">
                       <svg class="social-list__icon" width="20" height="20">
                         <use href="./images/sprite.svg#icon-linkedin-1"></use>
@@ -481,7 +505,7 @@
       </div>
     </footer>
     <!-- Modal window -->
-    <!-- <div class="backdrop is-hidden" data-modal>
+    <div class="backdrop is-hidden" data-modal>
       <div class="modal">
         <button class="modal-btn" type="button" data-modal-close>
           <svg class="modal-btn__icon" width="18" height="18">
@@ -541,7 +565,7 @@
           <button class="main-btn modal-form__btn" type="submit">Отправить</button>
         </form>
       </div>
-    </div> -->
+    </div>
     <script src="./js/modal.js"></script>
     <script src="./js/mobile-menu.js"></script>
   </body>
