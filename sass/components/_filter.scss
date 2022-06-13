@@ -2,12 +2,35 @@
 .filter-list {
     @extend %list;
 
-    justify-content: center;
-    margin-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
 
     /* Margin for filter's btn */
     &__item:not(:last-child) {
         margin-right: 8px;
+    }
+
+    @include mq(tablet) {
+        flex-wrap: nowrap;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+    @include mq(desktop) {
+        margin-bottom: 50px;
+    }
+}
+
+.filter-list__item {
+    @include mq(mobile-only) {
+        margin-bottom: 15px;
+
+        &:nth-child(3) {
+            margin-right: 0;
+        }
+        &:nth-last-child(-n + 2) {
+            margin-bottom: 0;
+        }
     }
 }
 
