@@ -1,46 +1,92 @@
 // /* CSS for section hero */
 .hero {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1600px;
+
+  background-color: getBackGroundColor('hero');
+  text-align: center;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url('../images/index/hero/hero-img_sm.jpg');
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    -webkit-image-set(url('../images/index/hero/hero-img_sm.webp') 1x);
+
+  @include mq(retina) {
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      url('../images/index/hero/hero-img_sm@2x.jpg');
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      -webkit-image-set(url('../images/index/hero/hero-img_sm@2x.webp') 1x);
+  }
+  @include mq(tablet) {
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      url('../images/index/hero/hero-img_md.jpg');
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      -webkit-image-set(url('../images/index/hero/hero-img_md.webp') 1x);
+    @include mq(retina) {
+      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url('../images/index/hero/hero-img_md@2x.jpg');
+      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        -webkit-image-set(url('../images/index/hero/hero-img_md@2x.webp') 1x);
+    }
+  }
+  @include mq(desktop) {
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      url('../images/index/hero/hero-img_lg.jpg');
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      -webkit-image-set(url('../images/index/hero/hero-img_lg.webp') 1x);
+    @include mq(retina) {
+      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url('../images/index/hero/hero-img_lg@2x.jpg');
+      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        -webkit-image-set(url('../images/index/hero/hero-img_lg@2x.webp') 1x);
+    }
+  }
+
+  &__container {
     padding-top: 118px;
     padding-bottom: 118px;
+    @include mq(desktop) {
+      padding-top: 200px;
+      padding-bottom: 200px;
+    }
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 30px;
     margin-left: auto;
     margin-right: auto;
+    max-width: 360px;
 
-    background-color: getBackGroundColor('hero');
+    @include mq(desktop) {
+      max-width: 696px;
+    }
+
+    color: getBackGroundColor('primary');
+    @include font(
+      $mixinFontWeight: 900,
+      $mixinFontSize: 26,
+      $mixinLineHeight: 1.62,
+      $mixinLetterSpacing: 0.06em
+    );
+    @include mq(desktop) {
+      @include font(
+        $mixinFontWeight: 900,
+        $mixinFontSize: 44,
+        $mixinLineHeight: 1.36,
+        $mixinLetterSpacing: 0.06em
+      );
+    }
+    text-transform: uppercase;
     text-align: center;
-    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/index/hero-background.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+  }
 
-
-    &__container {
-        @include mq(desktop) {
-            padding-top: 200px;
-            padding-bottom: 200px;
-        }
-    }
-
-    &__title {
-        margin-top: 0;
-        margin-bottom: 30px;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 360px;
-
-        @include mq(desktop) {
-            max-width: 696px;
-        }
-    
-        color: getBackGroundColor('primary');
-        @include font($mixinFontWeight: 900, $mixinFontSize: 26, $mixinLineHeight: 1.62, $mixinLetterSpacing: 0.06em);
-        @include mq(desktop) {
-            @include font($mixinFontWeight: 900, $mixinFontSize: 44, $mixinLineHeight: 1.36, $mixinLetterSpacing: 0.06em);
-        }
-        text-transform: uppercase;
-        text-align: center;
-    }
-
-    &__btn {
-        padding: 10px 32px;
-    }
+  &__btn {
+    padding: 10px 32px;
+  }
 }

@@ -19,7 +19,7 @@
     }
 
     overflow-y: scroll;
-    z-index: 2;
+    z-index: 100;
 }
 
 .backdrop.is-hidden {
@@ -28,11 +28,15 @@
     pointer-events: none;
 
     & .modal {
-        transform: translateX(-100%);
-        @include mq(tablet) {
-            transform: translate(-50%, -50%) scale(0.9);
-        }
+        // transform: translateX(-100%);
         opacity: 0;
+
+        @include mq(tablet) {
+            transform: translate(50%, 50%) scale(0.9);
+        }
+        @include mq(desktop) {
+            transform: translate(50%, 50%) scale(0.9);
+        }
     }
 }
 
@@ -43,17 +47,19 @@
     margin-left: auto;
     margin-right: auto;
     padding: 40px;
+    width: 100%;
 
     background-color: getBackGroundColor('primary');
     border-radius: 4px;
     box-shadow: 0px 1px 3px getBlackColorWithAlpha(0.12), 0px 1px 1px getBlackColorWithAlpha(0.14), 0px 2px 1px getBlackColorWithAlpha(0.2);
     opacity: 1;
-    transform: translateX(0);
+    // transform: translateX(0);
     transition: transform 250ms $timing-function, opacity 250ms $timing-function;
     @include mq(notDesktop) {
         max-width: 450px;
     }
     @include mq(tablet) {
+        margin: 0;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -61,6 +67,7 @@
     }
     @include mq(desktop) {
         max-width: 528px;
+        transform: translate(-50%, -50%) scale(1);
     }
 }
 
@@ -109,7 +116,10 @@
     margin-right: auto;
 
     color: getColor('title-text');
-    @include font($mixinFontWeight: 700, $mixinFontSize: 20, $mixinLineHeight: 1.15, $mixinLetterSpacing: 0.03em);
+    @include font($mixinFontWeight: 700, $mixinFontSize: 20, $mixinLineHeight: 1.5, $mixinLetterSpacing: 0.03em);
+    @include mq(desktop) {
+        @include font($mixinFontWeight: 700, $mixinFontSize: 20, $mixinLineHeight: 1.15, $mixinLetterSpacing: 0.03em);
+    }
     text-align: center;
 }
 
@@ -122,7 +132,8 @@
     margin-top: 0;
     margin-right: 0;
     margin-left: 0;
-    margin-bottom: 4px;
+    margin-bottom: 10px;
+    padding-top: 18px;
 
     @include font($mixinFontSize: 12, $mixinLineHeight: 1.17, $mixinLetterSpacing: 0.01em);
     text-align: left;
@@ -134,8 +145,14 @@
 }
 
 .modal-form__text {
+    position: absolute;
+    top: -20px;
+    left: 0;
     display: block;
-    margin-bottom: 10px;
+
+    .modal-form__input:focus ~ & {
+        color: getColor('accent');
+    }
 }
 
 .modal-form__container {
@@ -159,6 +176,9 @@
 
     &:focus {
         border-color: getColor('accent');
+    }
+    &:focus ~ .modal-form__text {
+        color: getColor('accent');
     }
 }
 
@@ -188,6 +208,9 @@
 
     &:focus {
         border-color: getColor('accent');
+    }
+    &:focus + .modal-form__text {
+        color: getColor('accent');
     }
 }
 
@@ -241,6 +264,10 @@
 
 .checkbox-label__text {
     color: getColor('primary-text');
+    @include font($mixinFontSize: 12, $mixinLineHeight: 1.17, $mixinLetterSpacing: 0.03em);
+    @include mq(desktop) {
+        @include font($mixinFontSize: 14, $mixinLineHeight: 1.71, $mixinLetterSpacing: 0.03em);
+    }
 }
 
 .checkbox-label__link {
