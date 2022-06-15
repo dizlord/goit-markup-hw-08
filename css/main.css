@@ -2001,7 +2001,7 @@ img {
 }
 
 /* Item in portfolio cards */
-.cards-list__item {
+.cards-list__item:not(:last-child) {
   margin-bottom: 30px;
 }
 
@@ -2016,6 +2016,9 @@ img {
     -ms-flex-preferred-size: calc((100% - 30px) / 2);
         flex-basis: calc((100% - 30px) / 2);
     /* Clear the last in row */
+  }
+  .cards-list__item:first-child .cards-list__container {
+    padding: 20px 24px 56px;
   }
   .cards-list__item:nth-child(2n) {
     margin-right: 0;

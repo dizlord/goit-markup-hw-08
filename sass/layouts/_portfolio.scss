@@ -12,7 +12,9 @@
 
 /* Item in portfolio cards */
 .cards-list__item {
-  margin-bottom: 30px;
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
 
   @include mq(tablet) {
     margin-right: 30px;
@@ -20,11 +22,14 @@
   @include mq(tablet-only) {
     flex-basis: calc((100% - 30px) / 2);
 
+    &:first-child .cards-list__container {
+      padding: 20px 24px 56px;
+    }
     /* Clear the last in row */
     &:nth-child(2n) {
       margin-right: 0;
     }
-    &:last-child() {
+    &:last-child {
       margin-bottom: 0;
       margin-right: 0;
     }
