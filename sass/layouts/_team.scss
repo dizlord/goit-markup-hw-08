@@ -12,6 +12,12 @@
             0px 1px 1px getBlackColorWithAlpha(0.14),
             0px 2px 1px getBlackColorWithAlpha(0.2);
         border-radius: 0 0 4px 4px;
+
+        transition: transform 250ms $timing-function;
+    }
+
+    &__item:hover {
+        transform: translateY(-20px);
     }
 
     @include mq(notDesktop) {
