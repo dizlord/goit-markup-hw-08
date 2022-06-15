@@ -22,9 +22,6 @@
   @include mq(tablet-only) {
     flex-basis: calc((100% - 30px) / 2);
 
-    &:first-child .cards-list__container {
-      padding: 20px 24px 56px;
-    }
     /* Clear the last in row */
     &:nth-child(2n) {
       margin-right: 0;
@@ -55,6 +52,12 @@
   text-decoration: none;
   box-shadow: none;
   transition: box-shadow 250ms $timing-function;
+
+  @include mq(tablet-only) {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
 
   &:hover,
   &:focus {
@@ -111,6 +114,9 @@
 .cards-list__container {
   padding: 20px 24px;
 
+  @include mq(tablet-only) {
+    flex-grow: 1;
+  }
   @each $side in right, bottom, left {
     border-#{$side}: 1px solid getBorderColor('card');
   }

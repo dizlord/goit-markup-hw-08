@@ -3,7 +3,6 @@
 .clients-list {
     @extend %list;
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
 
     @include mq(notDesktop) {
@@ -44,18 +43,25 @@
             margin-bottom: 0;
         }
     }
+    @include mq(desktop) {
+        &__item {
+                flex-basis: calc((100% - 150px) / 6);
+            }
+    }
+
+    &__item {
+        height: 92px;
+    }
 
     &__icon {
         fill: currentColor;
-        padding-top: 16px;
-        padding-bottom: 16px;
 
         @include mq(tablet-only) {
-            width: 226px;
+            // width: 226px;
         }
 
         @include mq(desktop) {
-            width: 170px;
+            // width: 170px;
         }
     }
 }
@@ -65,14 +71,18 @@
     justify-content: center;
     align-items: center;
 
-    outline: 1px solid getColor('primary-icons');
+    width: 100%;
+    height: 100%;
+
+    border: 1px solid getColor('primary-icons');
+    outline: transparent;
     border-radius: 4px;
     color: getColor('primary-icons');
-    transition: outline 250ms $timing-function, color 250ms $timing-function;
+    transition: border 250ms $timing-function, color 250ms $timing-function;
 
     &:hover,
     &:focus {
         color: getColor('accent');
-        outline: 1px solid getColor('accent');
+        border: 1px solid getColor('accent');
     }
 }
