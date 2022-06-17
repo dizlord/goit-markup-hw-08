@@ -55,14 +55,6 @@
 
     &__icon {
         fill: currentColor;
-
-        @include mq(tablet-only) {
-            // width: 226px;
-        }
-
-        @include mq(desktop) {
-            // width: 170px;
-        }
     }
 }
 
